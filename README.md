@@ -1,20 +1,26 @@
 # e-commerce
 
-A simple e-commerce application focused on baby products.
+A Java-based baby products e-commerce application built with Spring Boot, Thymeleaf, and REST APIs.
 
 ## Features
 
 - Product listing for baby categories (diapers, bottles, toys, vehicle toys, cradles, clothes)
-- Filtering by category, brand, max price and search keyword
-- Wishlist and cart management
-- Basic payment service simulation with Card, UPI and Cash on Delivery
+- Filtering by category, brand, max price, and search keyword
+- Wishlist and cart management via Java backend APIs
+- Payment service simulation with Card, UPI, and Cash on Delivery
 
 ## Run locally
 
 From `/tmp/workspace/sureshputla/e-commerce`, run:
 
 ```bash
-python3 -m http.server 4173
+mvn spring-boot:run
 ```
 
-Then open `http://127.0.0.1:4173` in your browser.
+Then open `http://127.0.0.1:8080` in your browser.
+
+## Test
+
+```bash
+mvn test
+```
