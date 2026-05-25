@@ -29,6 +29,11 @@ const cartTotal = document.getElementById('cartTotal');
 const paymentMethod = document.getElementById('paymentMethod');
 const paymentStatus = document.getElementById('paymentStatus');
 const checkoutButton = document.getElementById('checkoutButton');
+const paymentMethodLabels = {
+  card: 'Card',
+  upi: 'UPI',
+  cod: 'Cash on Delivery'
+};
 
 function renderFilterOptions(select, values) {
   values.forEach((value) => {
@@ -176,7 +181,8 @@ function checkout() {
     return sum + (product ? product.price * qty : 0);
   }, 0);
 
-  paymentStatus.textContent = `Payment successful via ${method.toUpperCase()} for ₹${total}.`;
+  const methodLabel = paymentMethodLabels[method] || method;
+  paymentStatus.textContent = `Payment successful via ${methodLabel} for ₹${total}.`;
   state.cart.clear();
   renderCart();
 }
@@ -199,7 +205,7 @@ function initialize() {
   });
 
   priceFilter.addEventListener('input', (event) => {
-    state.maxPrice = event.target.value;
+    state.maxPrice = event.target.value.trim();
     renderProducts();
   });
 
