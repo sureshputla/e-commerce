@@ -4,8 +4,6 @@ import com.sureshputla.ecommerce.model.CartItem;
 import com.sureshputla.ecommerce.model.Product;
 import org.springframework.stereotype.Service;
 
-import java.util.Comparator;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;

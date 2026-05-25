@@ -4,9 +4,11 @@ import com.sureshputla.ecommerce.model.Product;
 import org.springframework.stereotype.Service;
 
 import java.util.Comparator;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Optional;
+import java.util.Set;
 
 @Service
 public class ProductCatalogService {
@@ -44,15 +46,10 @@ public class ProductCatalogService {
     }
 
     public List<Product> getProductsByIds(Iterable<Integer> ids) {
+        Set<Integer> idSet = new HashSet<>();
+        ids.forEach(idSet::add);
         return PRODUCTS.stream()
-                .filter(product -> {
-                    for (Integer id : ids) {
-                        if (product.id() == id) {
-                            return true;
-                        }
-                    }
-                    return false;
-                })
+                .filter(product -> idSet.contains(product.id()))
                 .sorted(Comparator.comparingInt(Product::id))
                 .toList();
     }
