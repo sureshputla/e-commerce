@@ -4,7 +4,7 @@ const products = [
   { id: 3, name: 'Stacking Ring Toy', category: 'Toys', brand: 'PlayBud', price: 499 },
   { id: 4, name: 'Battery Jeep Ride-On', category: 'Vehicle Toys', brand: 'ZoomKid', price: 8999 },
   { id: 5, name: 'Rocking Cradle', category: 'Cradles', brand: 'SleepLeaf', price: 4999 },
-  { id: 6, name: 'Cotton Baby Cloth Set', category: 'Cloths', brand: 'PureWrap', price: 699 },
+  { id: 6, name: 'Cotton Baby Cloth Set', category: 'Clothes', brand: 'PureWrap', price: 699 },
   { id: 7, name: 'Training Pants Diapers', category: 'Diapers', brand: 'PureWrap', price: 649 },
   { id: 8, name: 'Sipper Bottle', category: 'Bottles', brand: 'TinyCare', price: 279 }
 ];
